@@ -1,6 +1,6 @@
 import requests
 import tkinter as tk
-from tkinter import ttk, messagebox
+from tkinter import ttk, messagebox, font
 
 def prayer_times(city,country):
     url = f"http://api.aladhan.com/v1/timingsByCity?city={city}&country={country}&method=5"
@@ -28,6 +28,8 @@ def fetch_data():
 
 
 root = tk.Tk()
+app_font = font.nametofont("TkDefaultFont")
+app_font.configure(size=15)
 frame = ttk.Frame(root,padding='20')
 frame.grid(row=0,column=0)
 city_list = ['cairo','istanbul','london','dubai']
